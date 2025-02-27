@@ -1,0 +1,107 @@
+
+/* Media queries to be used with min-width */
+/* 576px / 768px / 900px / 1200px / 1440px 
+--breakpoint-up-small: 36em;
+--breakpoint-up-medium: 48em;
+--breakpoint-up-large: 56.25em;
+--breakpoint-up-xlarge: 75em;
+
+/* Media queries to be used with max-width */
+/* 575.98px / 767.98px / 899.98px 
+--breakpoint-down-small: 35.99875em;
+--breakpoint-down-medium: 47.99875em;
+--breakpoint-down-large: 56.24875em;*/
+
+/* 900px 
+@media screen and (min-width: 56.25em) {
+    .header_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}*/
+
+@media screen and (min-width: 56.25em) {
+    .navbar__logo--mobile {
+        display: none;
+    }
+    
+    .navbar__items {
+        display: flex;
+        align-items: center;
+        gap: 0 2.5rem;
+    }
+}
+
+/* 899.98px */
+@media screen and (max-width: 56.24875em) {
+    .navbar__items {
+        display: none;
+    }
+}
+
+/* MOBILE BUTTON */
+.navbar__menu-trigger {
+   background-color: transparent; 
+}
+
+.navbar__menu-trigger > * {
+    display: block;
+    width: 1.25rem;
+    height: 0.1875rem;
+    background-color: var(--clr-bg-main) ;
+    margin-block-end: 0.25rem;
+}
+
+.navbar__menu-trigger > * not(:last-child){
+       margin-block-end: 0.25rem;
+}
+
+
+.navbar__menu-trigger-top >{
+  width: 0.75rem;
+}
+
+.navbar__menu-trigger-middle >{
+    width:1.25rem;
+  }
+
+  .navbar__menu-trigger-bottom >{
+    width: 1.625rem;
+  }
+  @media screen and (min-width: 56.25em) {
+    .navbar__menu-trigger {
+        display: none;
+    }
+}
+
+.social {
+    display: flex;
+    gap: 0 0.8rem;
+}
+/* 899.98px*/
+@media screen and (max-width: 56.24875em)
+{
+    .social{display:none;}
+}
+
+/* HOVER EFFECT */
+.navbar__item {
+    position: relative;
+}
+
+.navbar__item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--clr-bg-link-hover);
+    transition: width 0.4ms cubic-bezier(0.56,0.2,0.21,1.38);
+}
+
+.navbar__item:hover::after {
+    width: 100%;
+}
+

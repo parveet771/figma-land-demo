@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Program",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.js",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }
+    ],
+    "files.associations": {
+    "*.json": "jsonc"
+}
+,
+"scripts": {
+    "dev": "concurrently \"npm run start-server\" \"npm run open-browser\"",
+    "start-server": "your-server-start-command",
+    "open-browser": "open http://localhost:3000"
+}
+,
+"open-browser": "npx open-cli http://localhost:3000 --browser=firefox"
+
+
+}
